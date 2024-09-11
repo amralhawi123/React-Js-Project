@@ -6,6 +6,10 @@ const Services = () => {
   return (
     <div data-to-scrollspy-id="Services" className="services">
       <Container>
+        <div className="title">
+          <h5>Services</h5>
+          <h2>Discover More Services</h2>
+        </div>
         <Row>
           <Col lg={6}>
             <motion.div

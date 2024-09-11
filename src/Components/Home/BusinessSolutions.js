@@ -4,7 +4,7 @@ import { Button, Container } from "react-bootstrap";
 
 const BusinessSolutions = () => {
   return (
-    <div className="my-5 businessSolutions">
+    <div className=" businessSolutions">
       <Container className="d-flex justify-content-between align-items-center">
         <div>
           <h1>
