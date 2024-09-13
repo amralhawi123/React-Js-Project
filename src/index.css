@@ -25,8 +25,7 @@ a{
  color: var(--scond-color) !important;
 }
 .line{
-  height: 4px;
-  color: white;
+  height: 4px; 
   background-color: white;
   width: 70px;
   border-radius: 2px;
@@ -42,8 +41,7 @@ section:first-child{
  .navBar{
   top: 0;
   width: 100%;
-  z-index: 100;
-  transition: all 0.2s ease-in-out;
+  z-index: 100; 
   position: fixed;
  }
 
@@ -78,54 +76,38 @@ section:first-child{
 /* end nav */
 
 /* start home-slider */
-.home-slider{
-  margin-top: 80px;
-}
+
 .home-slider img{
   height: 650px;
-  width: 1500px;
-}
-.home-slider h1{
-font-weight: bold;
-font-size: 55px;
-}
-.home-slider span{
-color:var(--scond-color)
+  width: 100%;
+  filter: brightness(0.2);
 }
 
-.home-slider p{
-  color: #fff;
-  margin-right: 60px;
+.carousel-caption {   
+  text-align: left;
+  top: 10%;
+  width: 45%;
+}
+.home-slider h1{
+  font-weight: bold;
+  font-size: 55px;
+  }
+  .home-slider span{
+  color:var(--scond-color)
+  }
+.home-slider p{  
   margin-bottom: 50px;
-  opacity: 1;
-  visibility: visible;
 letter-spacing: 1px;
 }
 
-.carousel-item {
-  position: relative;
-  display: none;
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transition: transform .6s ease-in-out;
-}
-.carousel-caption {
-  position: absolute;
-  color: #fff;
-  text-align: left;
-  top: 40%;
-  width: 40%;
-  transform: translateY(-50%);
-  padding-bottom: 20px;
-}
 .btn-primary{
 background-color: var(--scond-color);
 border-color: var(--scond-color);
 }
+
 @media (max-width:992px) {
   .carousel-caption {
-    width: 60%;
+    width: 90%; 
   }
   .home-slider h1{
     font-weight: bold;

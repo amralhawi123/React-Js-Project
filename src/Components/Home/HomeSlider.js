@@ -1,8 +1,8 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import imgSlider1 from "../../imgs/slide-01.jpg";
-import imgSlider2 from "../../imgs/slide-02.jpg";
-import imgSlider3 from "../../imgs/slide-03.jpg";
+import imgSlider1 from "../../imgs/pikaso_embed.jpeg";
+import imgSlider2 from "../../imgs/pikaso_edit.jpeg";
+import imgSlider3 from "../../imgs/pikaso_embed1.jpeg";
 import { Button } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
