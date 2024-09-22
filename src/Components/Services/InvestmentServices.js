@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import investImage1 from "../../imgs/service-details-03.jpg";
+import investImage1 from "../../imgs/service-details-01.jpg";
 import investImage2 from "../../imgs/service-details-02.jpg";
-import investImage3 from "../../imgs/coffee-1283672_t1920.jpg";
+import investImage3 from "../../imgs/service-details-03.jpg";
 const InvestmentServices = () => {
   const [activeTab, setActiveTab] = useState("Crypto Investments");
   const [isFading, setIsFading] = useState(false);

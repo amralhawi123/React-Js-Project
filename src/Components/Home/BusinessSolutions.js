@@ -13,7 +13,7 @@ const BusinessSolutions = () => {
             <span>Crypto</span> Investments
           </h1>
         </div>
-        <div className="buttons d-flex gap-2">
+        <div className="buttons">
           <motion.button whileTap={{ scale: 0.85 }} className="motion-button">
             <Button variant="primary" size="lg">
               Discover More

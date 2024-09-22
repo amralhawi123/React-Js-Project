@@ -27,7 +27,7 @@ const Services = () => {
               }}
               viewport={{ once: true }}>
               <div class="service-item">
-                <i class="fas fa-archive"></i>
+                <i class="fa-solid fa-box-archive"></i>
                 <h4>CSS Templates</h4>
                 <p>
                   TemplateMo website is the best for you to explore and download

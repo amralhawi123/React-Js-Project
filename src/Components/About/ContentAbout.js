@@ -9,9 +9,7 @@ const ContentAbout = () => {
       <Container>
         <Row>
           <Col lg={6}>
-            <div className="image">
-              <img src={imageAbout} alt="image" />
-            </div>
+            <img src={imageAbout} alt="image" />
           </Col>
           <Col lg={6}>
             <div className="content">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import imgSlider1 from "../../imgs/pikaso_embed.jpeg";
 import imgSlider2 from "../../imgs/pikaso_edit.jpeg";
@@ -8,12 +8,17 @@ import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 
 const HomeSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handelSelect = (selectIndex) => {
+    setActiveIndex(selectIndex);
+  };
   return (
     <div className="home-slider">
-      <Carousel>
+      <Carousel activeIndex={activeIndex} onSelect={handelSelect}>
         <Carousel.Item>
           <img src={imgSlider1} alt="imgSlider1" />
-          <Fade>
+          <Fade key={activeIndex} delay={500}>
             <Carousel.Caption>
               <h1>
                 Get <span>ready</span> for your business
@@ -48,7 +53,7 @@ const HomeSlider = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img src={imgSlider2} alt="imgSlider1" />
-          <Fade>
+          <Fade key={activeIndex} delay={500}>
             <Carousel.Caption>
               <h1>
                 <span>Digital</span> Currency for you
@@ -83,7 +88,7 @@ const HomeSlider = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img src={imgSlider3} alt="imgSlider1" />
-          <Fade>
+          <Fade key={activeIndex} delay={500}>
             <Carousel.Caption>
               <h1>
                 Best One in Town
