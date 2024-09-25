@@ -1,19 +1,46 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import investImage1 from "../../imgs/service-details-01.jpg";
 import investImage2 from "../../imgs/service-details-02.jpg";
 import investImage3 from "../../imgs/service-details-03.jpg";
+import { Zoom } from "react-awesome-reveal";
 const InvestmentServices = () => {
   const [activeTab, setActiveTab] = useState("Crypto Investments");
-  const [isFading, setIsFading] = useState(false);
 
-  useEffect(() => {
-    setIsFading(true);
-  }, [activeTab]);
-
-  const handleTabClick = (tab) => {
+  const handleClick = (tab) => {
     setActiveTab(tab);
-    setIsFading(!isFading);
+  };
+  const tabs = {
+    "Crypto Investments": [
+      [
+        <img src={investImage1} alt="service-image" />,
+        "Learn more about cryptocurrency investments",
+        "Etiam id ligula risus. Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor, at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.",
+        "- Top Crypto prices and charts",
+        "- Top Crypto prices and charts",
+        "- Top Crypto prices and charts",
+      ],
+    ],
+    "Cryptocurrency Market": [
+      [
+        <img src={investImage2} alt="service-image" />,
+        "Read more on Cryptocurrency Market",
+        "Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor, at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.",
+        "- Top Crypto prices and charts",
+        "- Top Crypto prices and charts",
+        "- Top Crypto prices and charts",
+      ],
+    ],
+    "Financial Planning": [
+      [
+        <img src={investImage3} alt="service-image" />,
+        "How to carefully plan on your online financials",
+        "Etiam id ligula risus. Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor, at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.",
+        "- Top Crypto prices and charts",
+        "- Top Crypto prices and charts",
+        "- Top Crypto prices and charts",
+      ],
+    ],
   };
 
   return (
@@ -24,91 +51,33 @@ const InvestmentServices = () => {
           <h1>Upgrade your knowledge</h1>
         </div>
         <div className="content">
-          <div className="tabs">
-            <button
-              className={activeTab === "Crypto Investments" ? "active" : ""}
-              onClick={() => handleTabClick("Crypto Investments")}>
-              Crypto Investments
-            </button>
-            <button
-              className={activeTab === "Cryptocurrency Market" ? "active" : ""}
-              onClick={() => handleTabClick("Cryptocurrency Market")}>
-              Cryptocurrency Market
-            </button>
-            <button
-              className={activeTab === " Financial Planning" ? "active" : ""}
-              onClick={() => handleTabClick(" Financial Planning")}>
-              Financial Planning
-            </button>
-          </div>
-          <div className="info">
-            {activeTab === "Crypto Investments" && (
-              <div className={`table-content ${isFading ? "active" : ""}`}>
-                <div className="box">
-                  <div className="image">
-                    <img src={investImage1} alt="serives-image" />
+          <div className="left">
+            <div className="tabs">
+              {Object.keys(tabs).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => handleClick(tab)}
+                  className={activeTab === tab ? "active" : ""}>
+                  {tab}
+                </button>
+              ))}
+            </div>
+            <Zoom key={activeTab}>
+              {tabs[activeTab].map(
+                ([imag, title, desc, span1, span2, span3], index) => (
+                  <div className="box " key={index}>
+                    <div className="image">{imag}</div>
+                    <div class="right-content">
+                      <h4>{title}</h4>
+                      <p>{desc}</p>
+                      <span>{span1}</span>
+                      <span>{span2}</span>
+                      <span class="last-span">{span3}</span>
+                    </div>
                   </div>
-                  <div class="right-content">
-                    <h4>Learn more about cryptocurrency investments</h4>
-                    <p>
-                      Etiam id ligula risus. Fusce fringilla nisl nunc, nec
-                      rutrum lectus cursus nec. In blandit nibh dolor, at rutrum
-                      leo accumsan porta. Nullam pulvinar eros porttitor risus
-                      condimentum tempus.
-                    </p>
-                    <span>- Top Crypto prices and charts</span>
-                    <span>- Is Cryptocurrency a good investment?</span>
-                    <span class="last-span">
-                      - Crypto Market Insiders and News
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
-            {activeTab === "Cryptocurrency Market" && (
-              <div className={`table-content ${isFading ? "active" : ""}`}>
-                <div className="box">
-                  <div className="image">
-                    <img src={investImage2} alt="serives-image" />
-                  </div>
-                  <div class="right-content">
-                    <h4>Read more on Cryptocurrency Market</h4>
-                    <p>
-                      Fusce fringilla nisl nunc, nec rutrum lectus cursus nec.
-                      In blandit nibh dolor, at rutrum leo accumsan porta.
-                      Nullam pulvinar eros porttitor risus condimentum tempus.
-                    </p>
-                    <span>- Top Crypto prices and charts</span>
-                    <span>- Is Cryptocurrency a good investment?</span>
-                    <span class="last-span">
-                      - Crypto Market Insiders and News
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
-            {activeTab === " Financial Planning" && (
-              <div className={`table-content ${isFading ? "active" : ""}`}>
-                <div className="box">
-                  <div className="image">
-                    <img src={investImage3} alt="serives-image" />
-                  </div>
-                  <div class="right-content">
-                    <h4>How to carefully plan on your online financials</h4>
-                    <p>
-                      Fusce fringilla nisl nunc, nec rutrum lectus cursus nec.
-                      In blandit nibh dolor, at rutrum leo accumsan porta.
-                      Nullam pulvinar eros porttitor risus condimentum tempus.
-                    </p>
-                    <span>- Top Crypto prices and charts</span>
-                    <span>- Is Cryptocurrency a good investment?</span>
-                    <span class="last-span">
-                      - Crypto Market Insiders and News
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
+                )
+              )}
+            </Zoom>
           </div>
         </div>
       </Container>

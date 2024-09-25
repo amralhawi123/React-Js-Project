@@ -2,6 +2,7 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
 const MapContact = () => {
   const defaultProps = {
     center: {
@@ -28,7 +29,7 @@ const MapContact = () => {
               <a href="#">info@company.com</a>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 ">
             <div class="info-item">
               <i class="fa fa-phone"></i>
               <h4>Phone Number</h4>
